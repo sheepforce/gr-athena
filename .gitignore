@@ -98,3 +98,6 @@ src/tags
 # temporaries
 *.bak
 *.old
+
+# Nix outputs
+result*

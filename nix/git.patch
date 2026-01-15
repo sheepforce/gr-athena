@@ -1,0 +1,37 @@
+diff --git a/configure.py b/configure.py
+index 99629a6e..6193151e 100755
+--- a/configure.py
++++ b/configure.py
+@@ -119,30 +119,13 @@ import subprocess
+ 
+ def get_git_revision_hash() -> str:
+   path = os.path.dirname(os.path.realpath(__file__))
+-  return (
+-    subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=path)
+-    .decode("ascii")
+-    .strip()
+-  )
++  return "nix"
+ 
+ def get_git_revision_short_hash() -> str:
+   path = os.path.dirname(os.path.realpath(__file__))
+-  return (
+-    subprocess.check_output(["git", "rev-parse", "--short", "HEAD"], cwd=path)
+-    .decode("ascii")
+-    .strip()
+-  )
++  return "nix"
+ 
+ def get_git_status() -> str:
+-  # should return "" if no changes
+-  path = os.path.dirname(os.path.realpath(__file__))
+-  result = (
+-    subprocess.check_output(["git", "diff", "--stat"], cwd=path)
+-    .decode("ascii")
+-    .strip()
+-  )
+-  if result == "":
+-    return "c"
+   return "m"
+ 
+ # Set template and output filenames
