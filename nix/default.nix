@@ -9,6 +9,7 @@
   hdf5,
   tree,
   extraConfigFlags ? [
+    "--cxx=g++-simd"
     "-cons_bc"
     "--coord=gr_dynamical"
     "--eos=eostaudyn_ps"

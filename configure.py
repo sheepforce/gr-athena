@@ -1283,7 +1283,8 @@ if args["cxx"] == "g++-simd":
   makefile_options["COMPILER_FLAGS"] = (
     "-O3 -std=c++17 -fwhole-program -flto=auto "
     "-fno-strict-aliasing "
-    "-fprefetch-loop-arrays -march=native "
+    "-fprefetch-loop-arrays -mavx2 -march=skylake "
+    "-fomit-frame-pointer -ftree-vectorize "
     "-fopenmp-simd "
     # '-Wunknown-pragmas '
     # '-fopt-info-vec-missed '
